@@ -6,9 +6,13 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; }
 
+    public string ANIM_MINING { get; private set; } = "Mining";
+    public string ANIM_MINING_SPEED { get; private set; } = "MiningSpeed";
+
     [Header("Programmatic Components (Don't manually set)")]
     public Interactable InteractableTarget;
     public bool IsMining = false;
+    public OreVein MiningTarget;
 
     [Header("Serialized Components")]
     [SerializeField] public Animator PlayerAnimator;
@@ -25,6 +29,4 @@ public class PlayerManager : MonoBehaviour
 
         Instance = this;
     }
-
-
 }

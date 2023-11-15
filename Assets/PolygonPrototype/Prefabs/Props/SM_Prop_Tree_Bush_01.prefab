@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 33141855350685124}
   - component: {fileID: 23577039362348914}
   - component: {fileID: 64439693916457640}
-  - component: {fileID: 3789485618010429146}
-  - component: {fileID: 492639478104143708}
   - component: {fileID: 4973764893334065901}
   m_Layer: 6
   m_Name: SM_Prop_Tree_Bush_01
@@ -109,37 +107,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: bfc3a74fe76960845b1626f17f183c0d, type: 3}
---- !u!114 &3789485618010429146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023917202629980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b1347f83bcbbc7438fe43c69ca582b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseEvents: 1
-  promptMessage: Mine
-  highlightedMeshes: []
-  unhighlightedMeshes: []
---- !u!114 &492639478104143708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023917202629980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20e50edac213b664b86d86227d525d48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnInteract:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4973764893334065901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,5 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d407bd0164d564d93cf5211973d638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UseEvents: 0
+  promptMessage: Mine
+  highlightedMeshes: []
+  unhighlightedMeshes: []
   playerAnimator: {fileID: 0}
   playerController: {fileID: 0}
+  statusBar: {fileID: 0}
+  oreResource: {fileID: 11400000, guid: 4e68090ba1bce6840928099fc325f51a, type: 2}

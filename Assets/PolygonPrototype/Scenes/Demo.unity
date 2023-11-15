@@ -59842,6 +59842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractableTarget: {fileID: 0}
   IsMining: 0
+  MiningTarget: {fileID: 0}
   PlayerAnimator: {fileID: 1929527074}
   UIStatusBar: {fileID: 757267642}
   BaseMiningSpeed: 0.5

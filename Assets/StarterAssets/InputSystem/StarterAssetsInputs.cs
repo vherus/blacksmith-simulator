@@ -7,9 +7,6 @@ namespace StarterAssets
 {
 	public class StarterAssetsInputs : MonoBehaviour
 	{
-        private const string MINING = "Mining";
-        private const string MINING_SPEED = "MiningSpeed";
-
 		[Header("Character Input Values")]
 		public Vector2 move;
 		public Vector2 look;
@@ -22,23 +19,6 @@ namespace StarterAssets
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
-
-        private bool shouldLerpMiningAnim = false;
-        private float miningTimeElapsed = 0f;
-        private float amountToLerp = 0f;
-
-        private void Update()
-        {
-            if (PlayerManager.Instance.IsMining && shouldLerpMiningAnim) {
-                amountToLerp = Mathf.Lerp(PlayerManager.Instance.BaseMiningSpeed, PlayerManager.Instance.SuccessMiningSpeed, miningTimeElapsed / .75f);
-                PlayerManager.Instance.PlayerAnimator.SetFloat(MINING_SPEED, amountToLerp);
-                miningTimeElapsed += Time.deltaTime;
-            } else {
-                shouldLerpMiningAnim = false;
-                miningTimeElapsed = 0f;
-                amountToLerp = 0f;
-            }
-        }
 
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value)
@@ -63,22 +43,6 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
-
-        public void OnFire(InputValue value) {
-            bool isTargetingVein = PlayerManager.Instance.InteractableTarget != null && PlayerManager.Instance.InteractableTarget.gameObject.tag == "OreVein";
-            if (value.isPressed && isTargetingVein && !PlayerManager.Instance.IsMining) {
-                PlayerManager.Instance.IsMining = true;
-                PlayerManager.Instance.PlayerAnimator.SetFloat(MINING_SPEED, PlayerManager.Instance.BaseMiningSpeed);
-                PlayerManager.Instance.PlayerAnimator.SetTrigger(MINING);
-                PlayerManager.Instance.UIStatusBar.gameObject.SetActive(true);
-            } else {
-                PlayerManager.Instance.UIStatusBar.gameObject.SetActive(false);
-
-                if (PlayerManager.Instance.UIStatusBar.DidHitTarget) {
-                    shouldLerpMiningAnim = true;
-                }
-            }
-        }
 #endif
 
 

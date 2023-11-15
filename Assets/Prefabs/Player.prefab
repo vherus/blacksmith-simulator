@@ -1090,6 +1090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 121a7e0180d94274796ec88958198512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pController: {fileID: 7925297176453391329}
 --- !u!1 &2536559113703036308
 GameObject:
   m_ObjectHideFlags: 0
@@ -3924,6 +3925,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371007fc9f1e9a6448c2c90900e95a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OreMined:
+    m_PersistentCalls:
+      m_Calls: []
+  statusBar: {fileID: 0}
 --- !u!1 &8318207335494548940
 GameObject:
   m_ObjectHideFlags: 0
